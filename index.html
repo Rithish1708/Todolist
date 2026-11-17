@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planify - Smart Task Planner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <h2>✦ Planify</h2>
+
+        <div class="nav-links">
+            <button class="nav active" data-filter="all">
+                Dashboard
+            </button>
+
+            <button class="nav" data-filter="pending">
+                Pending
+            </button>
+
+            <button class="nav" data-filter="completed">
+                Completed
+            </button>
+        </div>
+
+        <button id="themeBtn">🌙 Theme</button>
+    </nav>
+
+    <main class="container">
+
+        <!-- Welcome -->
+        <section class="welcome">
+            <div>
+                <p class="small-title">YOUR PERSONAL PLANNER</p>
+                <h1>Make Today Count! ✨</h1>
+                <p>Plan your work, manage your time and achieve more.</p>
+            </div>
+
+            <div class="welcome-icon">📅</div>
+        </section>
+
+        <!-- Statistics -->
+        <section class="stats">
+
+            <div class="stat-card purple">
+                <span>📋 Total Tasks</span>
+                <h2 id="totalTasks">0</h2>
+                <p>All activities</p>
+            </div>
+
+            <div class="stat-card pink">
+                <span>⏳ Pending</span>
+                <h2 id="pendingTasks">0</h2>
+                <p>Waiting to finish</p>
+            </div>
+
+            <div class="stat-card green">
+                <span>✓ Completed</span>
+                <h2 id="completedTasks">0</h2>
+                <p>Successfully done</p>
+            </div>
+
+            <div class="stat-card orange">
+                <span>📈 Progress</span>
+                <h2 id="progress">0%</h2>
+                <p>Your achievement</p>
+            </div>
+
+        </section>
+
+        <!-- Productivity -->
+        <section class="progress-card">
+            <div class="progress-heading">
+                <h3>🌟 Your Productivity</h3>
+                <span id="progressText">0% completed</span>
+            </div>
+
+            <div class="progress-track">
+                <div id="progressBar"></div>
+            </div>
+        </section>
+
+        <!-- Create Task -->
+        <section class="panel">
+
+            <h2>✏️ Create a New Task</h2>
+            <p class="description">Add your activities and stay organized.</p>
+
+            <form id="taskForm">
+
+                <input
+                    type="text"
+                    id="taskInput"
+                    placeholder="What do you need to do?"
+                    required
+                >
+
+                <select id="category">
+                    <option value="Personal">Personal</option>
+                    <option value="College">College</option>
+                    <option value="Work">Work</option>
+                    <option value="Other">Other</option>
+                </select>
+
+                <select id="priority">
+                    <option value="Low">Low Priority</option>
+                    <option value="Medium" selected>Medium Priority</option>
+                    <option value="High">High Priority</option>
+                </select>
+
+                <input type="date" id="dueDate">
+
+                <button type="submit" class="add-btn">
+                    + Create Task
+                </button>
+
+            </form>
+
+        </section>
+
+        <!-- Task List -->
+        <section class="panel">
+
+            <div class="task-heading">
+                <div>
+                    <h2>My Activities 📝</h2>
+                    <p class="description">Your daily tasks in one place.</p>
+                </div>
+
+                <button id="clearBtn" class="clear-btn">
+                    Clear Completed
+                </button>
+            </div>
+
+            <div class="tools">
+
+                <input
+                    type="search"
+                    id="searchInput"
+                    placeholder="🔍 Search your activities..."
+                >
+
+                <select id="categoryFilter">
+                    <option value="all">All Categories</option>
+                    <option value="Personal">Personal</option>
+                    <option value="College">College</option>
+                    <option value="Work">Work</option>
+                    <option value="Other">Other</option>
+                </select>
+
+            </div>
+
+            <div class="filter-buttons">
+
+                <button class="filter active" data-filter="all">
+                    All Tasks
+                </button>
+
+                <button class="filter" data-filter="pending">
+                    Pending
+                </button>
+
+                <button class="filter" data-filter="completed">
+                    Completed
+                </button>
+
+            </div>
+
+            <div id="taskList"></div>
+
+            <p id="emptyMessage" class="empty">
+                🌸 No activities found. Start by adding a task!
+            </p>
+
+        </section>
+
+        <footer>
+            Made with ♥ by RITHISH R|
+            Register Number:212224040278
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
